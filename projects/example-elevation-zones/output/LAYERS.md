@@ -18,7 +18,7 @@ filled above it with ~50% opacity so the relief shows through, basemap labels on
 - **Source**: derived from the project DEM (Copernicus GLO-90 or any DEM pointed at by
   `DEM_DIR` / `DEM_PATH`).
 - **Processing**: reproject DEM → equal-area Albers; `mapprep.raster.classify_to_polygons`
-  with breaks `[1500, 2400, 3000, 3500]` m, `simplify_m=90`, `min_area_m2=1e6`.
+  with breaks `[1500, 2400, 3000]` m (four zones), `simplify_m=90`, `min_area_m2=1e6`.
 - **Rationale**: manual breaks at the classic montane/subalpine/alpine transitions rather
   than quantiles — the thresholds are the point, so they should be nameable, not
   data-driven. 1 km² sieve added 2026-11-01 because single-pixel speckle from the raw
