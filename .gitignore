@@ -1,0 +1,17 @@
+# Local data paths and secrets
+.env
+
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Caches
+cache/
+.osm_cache/
+
+# Generated geospatial outputs are large and reproducible — track docs + previews only.
+projects/*/output/*
+!projects/*/output/LAYERS.md
+!projects/*/output/*.png
+projects/*/input/

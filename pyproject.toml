@@ -1,0 +1,11 @@
+[tool.uv.workspace]
+members = [
+    "packages/mapprep",
+    "projects/example-elevation-zones",
+]
+
+# Note on GDAL: PyPI has no Windows wheels for GDAL. On Windows, pin a prebuilt wheel
+# (e.g. from https://github.com/cgohlke/geospatial-wheels/releases) in the package that
+# needs it, which usually means pinning Python to the version that wheel targets. On
+# macOS/Linux, `uv add gdal` against your system GDAL generally works. The example
+# pipeline uses rasterio + numpy and does not require GDAL directly.
