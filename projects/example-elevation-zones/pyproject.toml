@@ -1,0 +1,17 @@
+[project]
+name = "example-elevation-zones"
+version = "0.1.0"
+description = "Worked example: classify a DEM into elevation zones as polygons"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "rasterio",
+    "shapely",
+    "geopandas",
+    "pyogrio",
+    "python-dotenv",
+    "mapprep",
+]
+
+[tool.uv.sources]
+mapprep = { workspace = true }
