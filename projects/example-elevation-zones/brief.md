@@ -33,7 +33,7 @@
 ## 4. Symbology & visual hierarchy
 - **Foreground:** the four zone polygons, filled with a sequential green→tan ramp.
 - **Context:** hillshade underneath for terrain; basemap labels on top.
-- **Classification:** manual breaks at 1,500 / 2,400 / 3,000 / 3,500 m (edit for your range).
+- **Classification:** manual breaks at 1,500 / 2,400 / 3,000 m → four zones (edit for your range).
 - **Typography:** one label per zone.
 
 ## 5. Layout & output
@@ -53,7 +53,7 @@
      each in `output/LAYERS.md`.
 
 ## 7. Open questions / decisions
-- [x] **Breaks:** manual at 1,500 / 2,400 / 3,000 / 3,500 m — matches the classic
+- [x] **Breaks:** manual at 1,500 / 2,400 / 3,000 m (four zones) — matches the classic
       montane/subalpine/alpine transitions; revisit per range.
 - [x] **Sliver floor:** sieve parts below 1 km² — single-pixel speckle out-shouted the
       zones in the first draft (2026-11-01).

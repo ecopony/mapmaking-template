@@ -25,8 +25,9 @@ HERE = Path(__file__).parent
 OUTPUT = HERE / "output"
 
 # Four bands: foothills / montane / subalpine / alpine. Edit for your range (brief §4).
-BREAKS = [1500, 2400, 3000, 3500]
-LABELS = ["foothills", "montane", "subalpine", "alpine", "icecap"]
+# N breaks make N+1 classes, so three breaks give the four labels below.
+BREAKS = [1500, 2400, 3000]
+LABELS = ["foothills", "montane", "subalpine", "alpine"]
 
 
 def find_dem() -> Path | None:
@@ -49,7 +50,7 @@ def main() -> None:
         print(
             "No DEM found. Set DEM_PATH to a GeoTIFF, or DEM_DIR to a folder of tiles, "
             "in the repo-root .env (copy .env.example). Would then:\n"
-            f"  1. reproject {dem} to the project's equal-area Albers CRS\n"
+            "  1. reproject the DEM to the project's equal-area Albers CRS\n"
             f"  2. classify at breaks {BREAKS} m into {len(LABELS)} zones\n"
             "  3. smooth + sieve slivers below 1 km^2\n"
             "  4. write output/elevation_zones.gpkg (layer 'zones') and a hillshade\n"
