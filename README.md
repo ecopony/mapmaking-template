@@ -77,5 +77,5 @@ pipeline:
 
 ```bash
 cp .env.example .env     # then edit paths for your machine
-uv run --package example-elevation-zones main.py
+cd projects/example-elevation-zones && uv run main.py
 ```

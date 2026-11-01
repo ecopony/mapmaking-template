@@ -34,8 +34,9 @@ entry exists. Regenerating a layer appends to its rationale rather than overwrit
 ## Running pipelines (uv workspace)
 
 - Python 3.12, single root `.venv` and `uv.lock`.
-- Run a project from its directory with `uv run main.py`, or from the root with
-  `uv run --package <slug> main.py`.
+- Run a project **from its own directory**: `cd projects/<slug> && uv run main.py`
+  (the first run syncs the shared `.venv`). Running `uv run --package <slug> main.py` from
+  the root does *not* work — uv treats `main.py` as a program name, not a script path.
 - A new project is a workspace member: add `projects/<slug>` to the `members` list in the
   root `pyproject.toml`, and give it a `pyproject.toml` with `mapprep = { workspace = true }`.
 - Bulk source data lives outside the repo; locate it via a `.env` at the repo root
